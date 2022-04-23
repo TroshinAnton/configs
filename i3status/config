@@ -14,7 +14,6 @@ order+="tztime moscow"
 tztime moscow {
   format = "%d.%m %H:%M:%S"
   timezone = "Europe/Moscow"
-  separator_block_width = 20
 }
 
 battery 0 {
@@ -22,25 +21,21 @@ battery 0 {
   format_down = "Что?"
   path = "/sys/class/power_supply/BAT%d/uevent"
   low_threshold = 20
-  separator_block_width = 20
 }
 
 memory {
   format = "П: %percentage_used"
   threshold_degraded = "30%"
   threshold_critical = "20%"
-  separator_block_width = 20
 }
 
 cpu_usage {
   format = "Ц: %usage"
   max_threshold = 75
   degraded_threshold = 50
-  separator_block_width = 20
 }
 
 volume master {
   format = "З: %volume"
   format_muted = "З: -%volume"
-  separator_block_width = 20
 }
