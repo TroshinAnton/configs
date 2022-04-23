@@ -1,0 +1,76 @@
+
+env:
+  TERM: xterm-256color
+
+window:
+  dimensions:
+    columns: 0
+    lines: 0
+  position:
+    x: 0
+    y: 0
+  padding:
+    x: 10
+    y: 10
+  decorations: full
+  title: Terminal
+  dynamic_title: true
+  class: 
+    instance: Alacritty
+    general: Alacritty
+
+scrolling:
+  history: 100000
+  multiplier: 3
+
+font:
+  normal:
+    family: Hack
+    style: Regular
+  bold:
+    family: Hack
+    style: Bold
+  italic:
+    family: Hack
+    style: Italic
+  bold_italic:
+    family: Hack
+    style: Bold Italic
+  size: 9.0
+  offset:
+    x: 0
+    y: 0
+  draw_bold_text_with_bright_colors: false
+
+colors:
+  primary:
+    background: '#2d333b'
+    foreground: '#adbac7'
+  normal:
+    black:   '#2d333b'
+    red:     '#f47067'
+    green:   '#8ddb8c'
+    yellow:  '#f69d50'
+    blue:    '#6cb6ff'
+    magenta: '#dcbdfb'
+    cyan:    '#96d0ff'
+    white:   '#adbac7'
+  bright:
+    black:   '#768390'
+    red:     '#f47067'
+    green:   '#8ddb8c'
+    yellow:  '#f69d50'
+    blue:    '#6cb6ff'
+    magenta: '#dcbdfb'
+    cyan:    '#96d0ff'
+    white:   '#adbac7'
+
+cursor:
+  style:
+    shape: Beam
+    blinking: Off
+  unfocused_hollow: true
+  thickness: 0.15
+
+live_config_reload: false
+alt_send_esc: false
