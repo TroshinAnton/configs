@@ -1,0 +1,130 @@
+# i3 config file (v4)
+
+set $mod Mod4
+
+font pango:Hack Bold 8
+font pango:icomoon 8
+
+bindsym $mod+Shift+S exec --no-startup-id flameshot gui
+bindsym $mod+F2 exec --no-startup-id firefox
+bindsym $mod+F3 exec --no-startup-id pcmanfm
+bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+d exec --no-startup-id dmenu_run
+
+default_orientation horizontal
+workspace_layout default
+default_border pixel 1
+default_floating_border pixel 1
+hide_edge_borders smart
+no_focus [all]
+focus_follows_mouse yes
+popup_during_fullscreen smart
+workspace_auto_back_and_forth yes
+focus_on_window_activation none
+
+
+exec --no-startup-id nm-applet
+
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+
+bindsym $mod+Shift+q kill
+
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+v split v
+bindsym $mod+b split h
+
+bindsym $mod+f fullscreen toggle
+
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+bindsym $mod+Shift+1 move workspace $ws1; workspace $ws1
+bindsym $mod+Shift+2 move workspace $ws2; workspace $ws2
+bindsym $mod+Shift+3 move workspace $ws3; workspace $ws3
+bindsym $mod+Shift+4 move workspace $ws4; workspace $ws4
+bindsym $mod+Shift+5 move workspace $ws5; workspace $ws5
+bindsym $mod+Shift+6 move workspace $ws6; workspace $ws6
+bindsym $mod+Shift+7 move workspace $ws7; workspace $ws7
+bindsym $mod+Shift+8 move workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move workspace $ws9; workspace $ws9
+bindsym $mod+Shift+0 move workspace $ws10; workspace $ws10
+
+bindsym $mod+Ctrl+1 move workspace $ws1
+bindsym $mod+Ctrl+2 move workspace $ws2
+bindsym $mod+Ctrl+3 move workspace $ws3
+bindsym $mod+Ctrl+4 move workspace $ws4
+bindsym $mod+Ctrl+5 move workspace $ws5
+bindsym $mod+Ctrl+6 move workspace $ws6
+bindsym $mod+Ctrl+7 move workspace $ws7
+bindsym $mod+Ctrl+8 move workspace $ws8
+bindsym $mod+Ctrl+9 move workspace $ws9
+bindsym $mod+Ctrl+0 move workspace $ws10
+
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exit
+
+mode "resize" {
+  bindsym h resize shrink width 10 px
+  bindsym j resize grow height 10 px
+  bindsym k resize shrink height 10 px
+  bindsym l resize grow width 10 px
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+bar {
+  status_command i3status
+  position bottom
+  separator_symbol " | "
+  binding_mode_indicator yes
+}
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
