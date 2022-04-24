@@ -2,8 +2,8 @@
 
 set $mod Mod4
 
-font pango:Hack Bold 8
 font pango:icomoon 8
+font pango:Hack Bold 8
 
 bindsym $mod+Shift+S exec --no-startup-id flameshot gui
 bindsym $mod+F2 exec --no-startup-id firefox
