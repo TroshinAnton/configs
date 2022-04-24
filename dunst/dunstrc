@@ -1,0 +1,36 @@
+[global]
+follow=mouse
+width=300
+height=80
+notification_limit=7
+origin=top-right
+offset = 50x50
+transparency=100
+separator_height=1
+padding = 4
+frame_width=0
+separator_color="#d8dee9"
+sort=true
+idle_threshold = 1
+font = "Hack 9"
+format = "<b>%a:</b>\n%s"
+ignore_newline=true
+stack_duplicates=true
+hide_duplicate_count=true
+broswer = /usr/bin/firefox -new-tab
+
+[shortcuts]
+close = ctrl+space
+close_all = ctrl+shift+space
+
+[urgency_low]
+background = "#4c566a"
+foreground = "#d8dee9"
+
+[urgency_normal]
+background = "#4c566a"
+foreground = "#d8dee9"
+
+[urgency_critical]
+background = "#bf616a"
+foreground = "#d8dee9"
