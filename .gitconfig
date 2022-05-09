@@ -1,0 +1,6 @@
+[user]
+	signingkey = C01A05B333122F63
+	email = pcms2@yandex.com
+	name = Sergei Tundykov
+[commit]
+	gpgsign = true
